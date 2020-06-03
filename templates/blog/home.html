@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+{% load static %}
+<body>
+{% block content %}
+    <h1>Welcome to blog</h1>
+    {% for post in page_obj %}
+        <h2>{{ post.title }}</h2>
+        <img src="{{ post.image.url }}" alt="title" style="width: 165px; height: 165px;"/>
+        <h4>{{ post.text }}</h4>
+        <h3>{{ post.publication_date }}</h3>
+        <p>------------------------------------</p>
+    {% endfor %}
+{% endblock %}
+</body>
